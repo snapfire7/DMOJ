@@ -39,10 +39,11 @@ using namespace std;
 //===========================================
 //! el codigo se puede hacer por "segment descomposition" o por "Binary search"
 int block=sqrt(mx)+1;
-vector<bool>prim(mx, 1);
+bitset<100000000>prim;
 vector<int> sblock(block,0);
 
 void criba(){ //sacando primos
+    prim.set()
     prim[0]=prim[1]=false;
     for(int i=2; mx>i;i++)
     if(prim[i]){

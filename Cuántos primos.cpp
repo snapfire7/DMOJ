@@ -3,7 +3,7 @@ using namespace std;
 // Jose Miguel Frade IPVCE MH7 Artemisa
 //================macros=====================
 // Maximo
-#define mx 10e7
+#define mx 100000000
 // Optimizacion
 #define fast     \
     cin.tie(0);  \
@@ -38,10 +38,11 @@ using namespace std;
 #define S second
 //===========================================
 //! el codigo se puede hacer por "segment descomposition" o por "Binary search"
-vector<bool> sieve(mx, 1);
+bitset<100000000>sieve;
 vi primes;
 void sieve_eratosthenes()
 { //?para sacar los numeros primos
+    sieve.set();
     sieve[0] = sieve[1] = false;
     for (int i = 2; mx > i; i++)
         if (sieve[i])
@@ -77,6 +78,6 @@ int main()
     for(int i=1; rep >= i; i++)
     {
         cin >> a >> b;
-        cout << "Test Case #" << i <<": "<< binary_search(b+1)-binary_search(a) << sl;
+        cout << "Test Case #" << i <<": "<< binary_search(b+1)-binary_search(a) << "\n";
     }
 }
